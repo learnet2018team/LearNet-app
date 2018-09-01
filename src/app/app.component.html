@@ -1,9 +1,9 @@
 <ion-app>
   <ion-split-pane>
 
-    <ion-menu>
+    <ion-menu [ngClass]="{ 'custom-class-name': newStyle }">
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar color="medium">
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
@@ -11,7 +11,7 @@
 
         <ion-list>
           <ion-list-header>
-            Navigate
+            Navegacion
           </ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item button (click)="navigate(p.url)">
@@ -26,14 +26,14 @@
 
         <ion-list *ngIf="loggedIn">
           <ion-list-header>
-            Account
+            Cuenta de usuario
           </ion-list-header>
 
           <ion-menu-toggle auto-hide="false">
             <ion-item button (click)="navigate('/account')">
               <ion-icon slot="start" name="person"></ion-icon>
               <ion-label>
-                Account
+                Cuenta de usuario
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -42,7 +42,7 @@
             <ion-item button (click)="navigate('/support')">
               <ion-icon slot="start" name="help"></ion-icon>
               <ion-label>
-                Support
+                Soporte
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -51,7 +51,7 @@
             <ion-item button (click)="logout()">
               <ion-icon slot="start" name="log-out"></ion-icon>
               <ion-label>
-                Logout
+                Cerrar sesion
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -60,14 +60,14 @@
 
         <ion-list *ngIf="!loggedIn">
           <ion-list-header>
-            Account
+            Cuenta de usuario
           </ion-list-header>
 
           <ion-menu-toggle auto-hide="false">
             <ion-item button (click)="navigate('/login')">
               <ion-icon slot="start" name="log-in"></ion-icon>
               <ion-label>
-                Login
+                Iniciar sesion
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -76,7 +76,7 @@
             <ion-item button (click)="navigate('/support')">
               <ion-icon slot="start" name="help"></ion-icon>
               <ion-label>
-                Support
+                Soporte
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -85,7 +85,7 @@
             <ion-item button (click)="navigate('/signup')">
               <ion-icon slot="start" name="person-add"></ion-icon>
               <ion-label>
-                Signup
+                Registrarse
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -98,7 +98,7 @@
           <ion-menu-toggle auto-hide="false">
             <ion-item button (click)="openTutorial()">
               <ion-icon slot="start" name="hammer"></ion-icon>
-              <ion-label>Show Tutorial</ion-label>
+              <ion-label>Mostrar tutorial</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
